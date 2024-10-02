@@ -1,0 +1,72 @@
+version: "3.7"
+services:
+  ################### DATABASES ###################
+  docker-mysql_1:
+    container_name: mariadb_mysql_database
+    image: "mariadb:latest"
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=hotelManagement
+    ports:
+      - 3306:3306
+    restart: unless-stopped
+
+  docker-mysql_2:
+    container_name: mariadb_2
+    image: "mariadb:latest"
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=hotelManagement
+    ports:
+      - 3307:3306
+    restart: unless-stopped
+
+  docker-mysql_3:
+    container_name: mariadb_3
+    image: "mariadb:latest"
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=hotelManagement
+    ports:
+      - 3308:3306
+    restart: unless-stopped
+
+  docker-mysql_4:
+    container_name: mariadb_4
+    image: "mariadb:latest"
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=hotelManagement
+    ports:
+      - 3309:3306
+    restart: unless-stopped
+
+  docker-mysql_5:
+    container_name: mariadb_5
+    image: "mariadb:latest"
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=hotelManagement
+    ports:
+      - 3310:3306
+    restart: unless-stopped
+
+  docker-postgres:
+    container_name: postgres_database
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=ms_auth_DB
+    restart: unless-stopped
+
+  docker-mongodb:
+    container_name: mongodb_database
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/hotelManagement
+    restart: unless-stopped
