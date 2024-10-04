@@ -52,4 +52,15 @@ public class StaffServiceImp implements IStaffService {
         return staffRepository.findAll();
     }
 
+    @Override
+    public boolean DeleteStaff(int id) {
+        if (staffRepository.findById(id).isPresent()) {
+            // Staff staff = staffRepository.findById(id).get();
+            staffRepository.deleteById(id);
+            return true;
+        }else {
+            return false;
+        }
+    }
+
 }
