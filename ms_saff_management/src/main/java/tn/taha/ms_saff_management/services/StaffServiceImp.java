@@ -31,4 +31,25 @@ public class StaffServiceImp implements IStaffService {
         }
 
     }
+
+    @Override
+    public Staff update(int id, Staff newStaff) {
+        if (staffRepository.findById(id).isPresent()) {
+            Staff existingStaff = staffRepository.findById(id).get();
+            existingStaff.setFirstName(newStaff.getFirstName());
+            existingStaff.setLastName(newStaff.getLastName());
+            existingStaff.setEmail(newStaff.getEmail());
+            existingStaff.setRole(newStaff.getRole());
+            existingStaff.setPhone(newStaff.getPhone());
+            return staffRepository.save(existingStaff);
+        }else {
+            return null;
+        }
+    }
+
+    @Override
+    public List<Staff> all_staff() {
+        return staffRepository.findAll();
+    }
+
 }
