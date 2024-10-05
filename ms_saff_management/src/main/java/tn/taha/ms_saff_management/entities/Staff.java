@@ -3,9 +3,7 @@ package tn.taha.ms_saff_management.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
-import tn.esprit.ms_saff_management.entities.enums.Role;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
