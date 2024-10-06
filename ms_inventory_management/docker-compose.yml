@@ -1,0 +1,27 @@
+version: "3.4"
+services:
+  mysqldb:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=hotelManagement
+      - MYSQL_PASSWORD=root
+    ports:
+      - '3306:3306'
+    volumes:
+      - db_vol:/var/lib/mysql:rw
+  backend:
+    container_name: 'inventory_management_ms'
+    image: inventory_management_ms:latest
+    ports:
+      - '8087:8087'
+    restart: unless-stopped
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/hotelManagement?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+    depends_on:
+      - mysqldb
+
+volumes:
+  db_vol: {}
