@@ -44,5 +44,8 @@ public class ItemController {
     public Optional<Item> getItem(@PathVariable("id") Long id){
         return IS.show_item(id);
     }
-
+    @DeleteMapping (value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Boolean> delete(@PathVariable("id") Long id){
+        return new ResponseEntity<>(IS.DeleteItem(id),HttpStatus.OK);
+    }
 }
