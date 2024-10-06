@@ -36,4 +36,13 @@ public class ItemController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping (value = "/all")
+    public ResponseEntity<List<Item>> getAll(){
+        return new ResponseEntity<>(IS.all_items(), HttpStatus.OK);
+    }
+    @GetMapping (value = "/{id}")
+    public Optional<Item> getItem(@PathVariable("id") Long id){
+        return IS.show_item(id);
+    }
+
 }
