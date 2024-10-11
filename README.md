@@ -2,7 +2,7 @@
 
 This microservice web app is designed to streamline hotel operations by managing reservations, check-ins/outs, staff scheduling, inventory, and billing. It provides a user-friendly interface for hotel owners and staff to enhance efficiency and improve guest experiences.
 
-### 📜 **Main Features**
+###  **Main Features**
 
 -   **Backend Microservices:** There are 7 microservices, built using **Spring Boot** (Java) and **NestJS** (JavaScript/TypeScript).
     1.  **Customer Review Service:** Manages customer reviews and ratings.
@@ -13,7 +13,7 @@ This microservice web app is designed to streamline hotel operations by managing
     6.  **Staff Management Service:** Handles staff scheduling, payroll, and HR tasks.
     7.  **Authentication Service:** Ensures secure access to the system.
 
-### 📐 **Technical Architecture**
+###  **Technical Architecture**
 
 The system is designed with a microservices architecture, with different services communicating through a gateway and discovered via the **Eureka** server. Here's a summary of the modules:
 
